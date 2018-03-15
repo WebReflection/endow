@@ -32,5 +32,7 @@ new Sub instanceof Mixin2;  // true
 ### How to include
 
   * _ESM_ via `import endow from 'endow/esm'`
-  * _CJS_ via `import endow from 'endow/cjs'`
+  * _CJS_ via `const {endow} = require('endow/cjs');`
   * browsers via [unpkg.com/endow](https://unpkg.com/endow)
+
+The compatibility is every JS engine, but you need a global `Symbol` and, if you want to use `instanceof` to check your objects, a `Symbol.hasInstance` compatible, or transpiled, environment.
