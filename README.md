@@ -8,10 +8,10 @@ _endow_ makes creation of mixins a no-brainer, giving the ability to use `instan
 
 ```js
 // define mixins through this class based pattern
-const Mixin1 = Super = class extends Super {
+const Mixin1 = Super => class extends Super {
   behavior1() {}
 };
-const Mixin2 = Super = class extends Super {
+const Mixin2 = Super => class extends Super {
   behavior2() {}
 };
 
