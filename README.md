@@ -3,8 +3,8 @@
 A minimalistic, yet powerful, class based mixin utility.
 
 Following an approach explained in [this post](http://justinfagnani.com/2015/12/21/real-mixins-with-javascript-classes/),
-and inspired by [the following utility](inspired by https://github.com/justinfagnani/mixwith.js#mixwith),
-_endow_ makes creation of mixins a no brainer, giving the ability to use `instanceof` operator.
+and inspired by one piece of [the following utility](https://github.com/justinfagnani/mixwith.js#mixwith),
+_endow_ makes creation of mixins a no-brainer, giving the ability to use `instanceof` operator.
 
 ```js
 // define mixins through this class based pattern
@@ -28,3 +28,9 @@ new Sub instanceof Super;   // true
 new Sub instanceof Mixin1;  // true
 new Sub instanceof Mixin2;  // true
 ```
+
+### How to include
+
+  * _ESM_ via `import endow from 'endow/esm'`
+  * _CJS_ via `import endow from 'endow/cjs'`
+  * browsers via [unpkg.com/endow](https://unpkg.com/endow)
