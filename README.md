@@ -1,4 +1,6 @@
-# endow
+# endow [![Coverage Status](https://coveralls.io/repos/github/WebReflection/endow/badge.svg?branch=master)](https://coveralls.io/github/WebReflection/endow?branch=master)
+[![Build Status](https://travis-ci.org/WebReflection/endow.svg?branch=master)](https://travis-ci.org/WebReflection/endow)
+[![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](https://opensource.org/licenses/ISC)
 A minimalistic, yet powerful, class based mixin utility.
 
 Following an approach explained in [this post](http://justinfagnani.com/2015/12/21/real-mixins-with-javascript-classes/),
