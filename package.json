@@ -1,0 +1,41 @@
+{
+  "name": "endow",
+  "version": "0.0.0",
+  "description": "A minimalistic, yet powerful, class based mixin utility.",
+  "browser": "min.js",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "scripts": {
+    "build": "npm run cjs && npm run bundle && npm run min && npm test && npm run size",
+    "bundle": "bash -c 'echo \"var endow = $(asbundle ./esm/index.js)\">index.js'",
+    "cjs": "ascjs ./esm ./cjs",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "min": "uglifyjs index.js --support-ie8 --comments=/^!/ -c -m -o min.js",
+    "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c9 min.js | wc -c",
+    "test": "istanbul cover test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebReflection/endow.git"
+  },
+  "keywords": [
+    "mixins",
+    "interfaces",
+    "classes",
+    "multiple",
+    "inheritance"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebReflection/endow/issues"
+  },
+  "homepage": "https://github.com/WebReflection/endow#readme",
+  "devDependencies": {
+    "asbundle": "^2.5.0",
+    "ascjs": "^2.4.0",
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5",
+    "uglify-js": "^3.3.15"
+  }
+}

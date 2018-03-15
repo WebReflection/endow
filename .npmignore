@@ -1,0 +1,8 @@
+coverage/*
+esm/.eslintrc
+node_modules/*
+test.js
+.DS_Store
+.gitignore
+.travis.yml
+package-lock.json
