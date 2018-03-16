@@ -7,11 +7,11 @@
   "module": "esm/index.js",
   "scripts": {
     "build": "npm run cjs && npm run bundle && npm run min && npm test && npm run size",
-    "bundle": "bash -c 'echo \"var endow = $(asbundle ./esm/index.js)\">index.js'",
+    "bundle": "bash -c 'echo \"var endow = (function () {\n$(cat ./esm/index.js | sed \"s/export default endow;//\" | sed \"s/export /return /\")\n}());\">index.js'",
     "cjs": "ascjs ./esm ./cjs",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "min": "uglifyjs index.js --support-ie8 --comments=/^!/ -c -m -o min.js",
-    "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c9 min.js | wc -c",
+    "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c9 min.js | wc -c;cat min.js | brotli | wc -c",
     "test": "istanbul cover test.js"
   },
   "repository": {
@@ -32,7 +32,6 @@
   },
   "homepage": "https://github.com/WebReflection/endow#readme",
   "devDependencies": {
-    "asbundle": "^2.5.0",
     "ascjs": "^2.4.0",
     "coveralls": "^3.0.0",
     "istanbul": "^0.4.5",

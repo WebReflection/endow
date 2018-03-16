@@ -35,4 +35,20 @@ new Sub instanceof Mixin2;  // true
   * _CJS_ via `const {endow} = require('endow/cjs');`
   * browsers via [unpkg.com/endow](https://unpkg.com/endow)
 
-The compatibility is every JS engine, but you need a global `Symbol` and, if you want to use `instanceof` to check your objects, a `Symbol.hasInstance` compatible, or transpiled, environment.
+
+### Compatibility
+
+This module syntax is purposely written in an ES3 compatible fashion.
+
+ES5 [Array#some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) and [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) are needed,
+and to have a proper `instanceof` operator result, the [Symbol.hasInstance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/hasInstance) is needed too,
+but it's not mandatory.
+
+Please note this utility works with all polyfills <sup><sub>(loaded upfront)</sub></sup> and transpilers too.
+
+#### Size
+
+  * plain `index.js` is 2535 bytes
+  * plain `min.js` is 499 bytes
+  * gzip `min.js` is 336 bytes
+  * brotli `min.js` is 282 bytes

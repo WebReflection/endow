@@ -28,3 +28,17 @@ console.assert([
   new Z instanceof M1,
   !(new Z instanceof M3)
 ].every(Boolean));
+
+delete require.cache[require.resolve('./cjs')];
+global.Symbol = String;
+const {endow:ish} = require('./cjs');
+
+const M4 = function (Super) {
+  return class M4 extends Super {};
+};
+class E extends ish(A).with(M4) {}
+
+console.assert([
+  new E instanceof A,
+  !(new E instanceof M4)
+].every(Boolean));
