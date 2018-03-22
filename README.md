@@ -8,15 +8,26 @@ _endow_ makes creation of mixins a no-brainer, giving the ability to use `instan
 
 ```js
 // define mixins through this class based pattern
-const Mixin1 = Super => class extends Super {
+const Mixin1 = Super => class Mixin1 extends Super {
   behavior1() {}
 };
-const Mixin2 = Super => class extends Super {
+const Mixin2 = Super => class Mixin2 extends Super {
   behavior2() {}
 };
 
 // endow classes with mixins while extending
 class Sub extends endow(Super).with(Mixin1, Mixin2) {
+  behaviors() {
+    this.behavior1();
+    this.behavior2();
+  }
+}
+
+// ... OR ...
+
+// endow.with as decorator
+@endow.with(Mixin1, Mixin2)
+class Sub extends Super {
   behaviors() {
     this.behavior1();
     this.behavior2();

@@ -29,6 +29,33 @@ console.assert([
   !(new Z instanceof M3)
 ].every(Boolean));
 
+class G extends A {
+  constructor() {
+    super().G = true;
+  }
+}
+const G1 = Super => class extends Super {
+  constructor() {
+    super().G1 = true;
+  }
+};
+const G2 = Super => class extends Super {
+  constructor() {
+    super().G2 = true;
+  }
+};
+endow.with(G1, G2)({kind: 'class', elements: []}).finisher(G);
+
+console.assert([
+  new G instanceof A,
+  new G instanceof G,
+  new G instanceof G1,
+  new G instanceof G2,
+  (new G).G && (new G).G1 && (new G).G2
+].every(Boolean));
+
+endow.with(G1, G2)({});
+
 delete require.cache[require.resolve('./cjs')];
 global.Symbol = String;
 const {endow:ish} = require('./cjs');

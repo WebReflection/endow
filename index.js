@@ -2,6 +2,36 @@ var endow = (function () {
 /*! (c) Andrea Giammarchi, @WebReflection (ISC) */
 // inspired by https://github.com/justinfagnani/mixwith.js#mixwith
 
+
+// @DECORATORS ONLY
+
+// commonly needed shortcuts
+var gPO = Object.getPrototypeOf;
+var sPO = Object.setPrototypeOf;
+
+// usable with latest decorator proposal
+// @endow.with(Mixin1, Mixin2)
+// class Sub extends Super { ... }
+endow.with = function () {
+  var Mixins = arguments;
+  return function (descriptor) {
+    return descriptor.kind === 'class' ?
+      {
+        kind: descriptor.kind,
+        elements: descriptor.elements,
+        finisher: function (Class) {
+          var endowed = endow(gPO(Class));
+          var Mixin = endowed.with.apply(endowed, Mixins);
+          sPO(sPO(Class, Mixin).prototype, Mixin.prototype);
+        }
+      } :
+      descriptor;
+  };
+};
+
+
+// THE ENDOW HELPER FOR ANY CLASS
+
 // If not available, Symbol could even be a special `String` here
 var classes = Symbol('endow');
 
@@ -23,8 +53,7 @@ var descriptor = {
 
 return function endow(Super) {
   return {
-    // IE < 9 might throw with code that uses `{with: ...}`
-    "with": function () {
+    with: function () {
       for (var
         Mixin,
         Class = Super,
