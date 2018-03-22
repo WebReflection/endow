@@ -11,7 +11,7 @@
     "cjs": "ascjs ./esm ./cjs",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "min": "uglifyjs index.js --support-ie8 --comments=/^!/ -c -m -o min.js",
-    "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c9 min.js | wc -c;cat min.js | brotli | wc -c",
+    "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c9 min.js | wc -c;cat min.js | brotli | wc -c && rm -f min.js.br",
     "test": "istanbul cover test.js"
   },
   "repository": {
@@ -35,6 +35,6 @@
     "ascjs": "^2.4.0",
     "coveralls": "^3.0.0",
     "istanbul": "^0.4.5",
-    "uglify-js": "^3.3.15"
+    "uglify-js": "^2.8.29"
   }
 }

@@ -50,5 +50,5 @@ Please note this utility works with all polyfills <sup><sub>(loaded upfront)</su
 
   * plain `index.js` is 2535 bytes
   * plain `min.js` is 499 bytes
-  * gzip `min.js` is 336 bytes
-  * brotli `min.js` is 282 bytes
+  * gzip `min.js` is 337 bytes
+  * brotli `min.js` is 277 bytes

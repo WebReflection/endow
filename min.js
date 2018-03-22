@@ -1,3 +1,2 @@
-var endow=function(){
-/*! (c) Andrea Giammarchi, @WebReflection (ISC) */
-var u=Symbol("endow"),i=Symbol.hasInstance||u,r={configurable:!0,value:function(n){return this[u].some(t,n)}};return function(o){return{with:function(){for(var n,t=o,e=0,r=arguments.length;e<r;e++)t=(n=arguments[e])(t),f(n,u)?n[u].push(t):f(n,i)||c(n,t,{});return t}}};function c(n,t,e){e[i]=r,e[u]={value:[t]},Object.defineProperties(n,e)}function f(n,t){return n.hasOwnProperty(t)}function t(n){return this instanceof n}}();
+var endow=function(){function n(n,t,e){e[o]=u,e[r]={value:[t]},Object.defineProperties(n,e)}function t(n,t){return n.hasOwnProperty(t)}function e(n){return this instanceof n}/*! (c) Andrea Giammarchi, @WebReflection (ISC) */
+var r=Symbol("endow"),o=Symbol.hasInstance||r,u={configurable:!0,value:function(n){return this[r].some(e,n)}};return function(e){return{"with":function(){for(var u,i=e,c=0,f=arguments.length;c<f;c++)u=arguments[c],i=u(i),t(u,r)?u[r].push(i):t(u,o)||n(u,i,{});return i}}}}();
