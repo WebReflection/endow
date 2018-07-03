@@ -1,6 +1,6 @@
 {
   "name": "endow",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A minimalistic, yet powerful, class based mixin utility.",
   "unpkg": "min.js",
   "main": "cjs/index.js",
