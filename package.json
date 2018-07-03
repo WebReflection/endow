@@ -2,7 +2,7 @@
   "name": "endow",
   "version": "0.3.0",
   "description": "A minimalistic, yet powerful, class based mixin utility.",
-  "browser": "min.js",
+  "unpkg": "min.js",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "scripts": {
